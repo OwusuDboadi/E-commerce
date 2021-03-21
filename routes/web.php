@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 require 'admin.php';
 
@@ -14,6 +15,8 @@ require 'admin.php';
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Auth::routes();
 
 Route::view('/', 'site.pages.homepage');
 

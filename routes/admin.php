@@ -16,7 +16,7 @@ Route::group(['prefix'  =>  'admin'], function () {
                 })->name('admin.dashboard');
             Route::get('/settings', 'App\Http\Controllers\Admin\SettingController@index')->name('admin.settings');
             Route::post('/settings', 'App\Http\Controllers\Admin\SettingController@update')->name('admin.settings.update');
-        });
+
     Route::group(['prefix'  =>   'categories'], function() {
         Route::get('/', 'App\Http\Controllers\Admin\CategoryController@index')->name('admin.categories.index');
         Route::get('/create', 'App\Http\Controllers\Admin\CategoryController@create')->name('admin.categories.create');
@@ -75,6 +75,7 @@ Route::group(['prefix'  =>  'admin'], function () {
     });
 
     });
+});
 
 
 
