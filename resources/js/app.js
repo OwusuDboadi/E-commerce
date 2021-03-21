@@ -46,6 +46,7 @@ if (token) {
 import VueSwal from 'vue-swal';
 Vue.use(VueSwal);
 Vue.component('attribute-values', require('./components/AttributeValues.vue').default);
+Vue.component('product-attributes', require('./components/ProductAttributes.vue').default);
 //  import VueSweetalert2 from "vue-sweetalert2";
 //  Vue.use(VueSweetalert2)
 //Vue.component('example-component', require('./components/ExampleComponent.vue').default);

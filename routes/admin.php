@@ -51,6 +51,29 @@ Route::group(['prefix'  =>  'admin'], function () {
 
     });
 
+    Route::group(['prefix' => 'products'], function () {
+
+        Route::get('/', 'App\Http\Controllers\Admin\ProductController@index')->name('admin.products.index');
+        Route::get('/create', 'App\Http\Controllers\Admin\ProductController@create')->name('admin.products.create');
+        Route::post('/store', 'App\Http\Controllers\Admin\ProductController@store')->name('admin.products.store');
+        Route::get('/edit/{id}', 'App\Http\Controllers\Admin\ProductController@edit')->name('admin.products.edit');
+        Route::post('/update', 'App\Http\Controllers\Admin\ProductController@update')->name('admin.products.update');
+        Route::post('images/upload', 'App\Http\Controllers\Admin\ProductImageController@upload')->name('admin.products.images.upload');
+        Route::get('images/{id}/delete', 'App\Http\Controllers\Admin\ProductImageController@delete')->name('admin.products.images.delete');
+
+
+        // Load attributes on the page load
+        Route::get('attributes/load', 'App\Http\Controllers\Admin\ProductAttributeController@loadAttributes');
+// Load product attributes on the page load
+        Route::post('attributes', 'App\Http\Controllers\Admin\ProductAttributeController@productAttributes');
+// Load option values for a attribute
+        Route::post('attributes/values', 'App\Http\Controllers\Admin\ProductAttributeController@loadValues');
+// Add product attribute to the current product
+        Route::post('attributes/add', 'App\Http\Controllers\Admin\ProductAttributeController@addAttribute');
+// Delete product attribute from the current product
+        Route::post('attributes/delete', 'App\Http\Controllers\Admin\ProductAttributeController@deleteAttribute');
+    });
+
     });
 
 

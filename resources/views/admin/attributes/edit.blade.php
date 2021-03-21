@@ -19,6 +19,9 @@
 
         <div class="col-md-9">
             <div class="tab-content">
+                <div class="tab-pane" id="values">
+                    <attribute-values :attributeid="{{ $attribute->id }}"></attribute-values>
+                </div>
                 <div class="tab-pane active" id="general">
                     <div class="tile">
                         <form action="{{ route('admin.attributes.update') }}" method="POST" role="form">
@@ -97,9 +100,7 @@
                     </div>
                 </div>
             </div>
-            <div class="tab-pane" id="values">
-                <attribute-values :attributeid="{{ $attribute->id }}"></attribute-values>
-            </div>
+
         </div>
     </div>
 
