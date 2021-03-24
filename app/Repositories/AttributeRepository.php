@@ -9,6 +9,7 @@ use Doctrine\Instantiator\Exception\InvalidArgumentException;
 
 class AttributeRepository extends BaseRepository implements AttributeContract
 {
+
     /**
      * AttributeRepository constructor.
      * @param Attribute $model

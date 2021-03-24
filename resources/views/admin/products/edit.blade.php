@@ -137,7 +137,7 @@
                                             <label class="control-label" for="categories">Categories</label>
                                             <select name="categories[]" id="categories" class="form-control" multiple>
                                                 @foreach($categories as $category)
-                                                    @php $check = in_array($category->id, $product->categories->pluck('id')->toArray()) ? 'selected' : ''@endphp
+                                                    @php $check = in_array($category, $product->categories->pluck('id')->toArray()) ? 'selected' : ''@endphp
                                                     <option value="{{ $category->id }}" {{ $check }}>{{ $category->name }}</option>
                                                 @endforeach
                                             </select>
